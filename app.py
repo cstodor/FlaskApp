@@ -23,6 +23,11 @@ def about():
 def users():
     return render_template('users-list.html', users = Users) # return users-list template and pass in the data (Users)
 
+# user
+@app.route('/user/<string:username>')
+def user(username):
+    return render_template('user-details.html', username = username) # return single user-details template and padd the id
+    
 # executed app
 if __name__ == '__main__':
     app.run(debug=True) # debug=True updates View if detects changes
